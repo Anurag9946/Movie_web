@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>movie_lists</title>
+</head>
+<body>
+{% block body %}
+    <div>
+        <div class="text-center">
+            <br><br>
+            <h1 class="text-center my_title">
+                {% if movie_items %}
+                <br>
+                    <h1 style="color:#D6C8C6;"><b>Library</b></h1>
+                {% else %}
+                <br>
+                <h3 style="color:#FA3516;">Empty list</h3>
+                {% endif %}
+            </h1>
+            <br>
+            {% if not movie_items %}
+                <p class="text-center">
+                    <h5 style="color:#9B8581;">watch new releases <a href="{% url 'movieapp:index' %}"><br><br><button type="button" class="btn btn-outline-success">continue</button></a></h5>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if movie_items %}
+    <div class="row mx-auto">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <table class="table my_custom_table">
+                <thead class="my_custom_thead">
+                    <tr>
+                        <th colspan="5">
+                            <h3 style="color:#9B8581;">Saved movies</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for movie in movie_items %}
+                    <tr>
+                        <td>
+                            <img src="{{ movie.movie.img.url }}" style="width: 280px; height: 390px;"><br>
+                        </td>
+                        <td class="text-left">
+                            <br><br>
+                            <h3 style="color:#D6C8C6;">{{ movie.movie.name }}</h3><br>
+                            <h5 style="color:#D6C8C6;">{{ movie.movie.description }}</h5><br><br><br>
+                            <a href="{% url 'wishlist:delete' movie.movie.id %}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+                            &nbsp;&nbsp;&nbsp;
+
+                            <button type="button" class="btn btn-outline-success" onclick="alert('downloading started plaese wait !')">Download</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>
+

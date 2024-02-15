@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sports</title>
+</head>
+<body>
+{% block body %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <h1 style="color:#E7CCCC;">Stream movies online</h1>
+                        <br>
+                        <p style="color:#FFFFFF;" >cinemaworld is using its strength in storytelling to create a deep catalog of docu-series about various sports and athletes.</p>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="container">
+        <br>
+        <div class="row">
+            {% for sport in sports_list %}
+            <div class="col-lg-3 col-sm-4">
+                <div class="box_main">
+                    <h5>.</h5>
+                    <a href="{% url 'movieapp:sport_detail' sport.id %}"><img class="card-img-top my_image" src="{{sport.img.url}}" alt="" style="width: 270px; height:390px;"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+        <table class="table my_custom_table">
+            <thead class="my_custom_thead">
+                <tr>
+                    <th>
+                        <a href="#"><h4 style="color:#E7CCCC;">Cinemaworld is available in</h4></a>
+
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="container">
+        <div class="row" style="color:white;">
+            <ul>
+               <h5>North America</h5>
+               <li><a href="#">Bermuda</a></li><br>
+               <li><a href="#">Mexico</a></li><br>
+               <li><a href="#">Canada</a></li><br>
+               <li><a href="#">United States</a></li><br>
+               <li><a href="#">Australia</a></li><br>
+            </ul>
+             <ul>
+               <h5>South America</h5>
+               <li><a href="#">Bolivia</a></li><br>
+               <li><a href="#">Argentina</a></li><br>
+               <li><a href="#">Brazil</a></li><br>
+               <li><a href="#">Paraguay</a></li><br>
+               <li><a href="#">Guyana</a></li><br>
+            </ul>
+            <ul>
+               <h5>Europe</h5>
+               <li><a href="#">Albania</a></li><br>
+               <li><a href="#">Androrra</a></li><br>
+               <li><a href="#">Azerbaijan</a></li><br>
+               <li><a href="#">Belarus</a></li><br>
+               <li><a href="#">Austria</a></li><br>
+            </ul>
+            <ul>
+               <h5>Asia</h5>
+               <li><a href="#">Hong Kong</a></li><br>
+               <li><a href="#">India</a></li><br>
+               <li><a href="#">Indonesia</a></li><br>
+               <li><a href="#">Lebanon</a></li><br>
+               <li><a href="#">Japan</a></li><br>
+            </ul>
+            <ul>
+               <h5>Africa</h5>
+               <li><a href="#">Algeria</a></li><br>
+               <li><a href="#">Angola</a></li><br>
+               <li><a href="#">Cameroon</a></li><br>
+               <li><a href="#">Burkina Faso</a></li><br>
+               <li><a href="#">Canada</a></li><br>
+            </ul>
+
+            <ul>
+               <h5>Central America</h5>
+               <li><a href="#">Guatemala</a></li><br>
+               <li><a href="#">El Salvador</a></li><br>
+               <li><a href="#">Costa Rica</a></li><br>
+               <li><a href="#">Honduras</a></li><br>
+               <li><a href="#">Nicaragua</a></li><br>
+            </ul>
+            <ul>
+               <h5>London</h5>
+               <li><a href="#">Albania</a></li><br>
+                <li><a href="#">Belarus</a></li><br>
+               <li><a href="#">Androrra</a></li><br>
+               <li><a href="#">Azerbaijan</a></li><br>
+               <li><a href="#">Austria</a></li><br>
+            </ul>
+            <ul>
+               <h5>spanish</h5>
+               <li><a href="#">Albania</a></li><br>
+               <li><a href="#">Androrra</a></li><br>
+               <li><a href="#">Azerbaijan</a></li><br>
+               <li><a href="#">Belarus</a></li><br>
+               <li><a href="#">Austria</a></li><br>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align:center; color:white;">
+         <div class="container">
+            <p class="copyright_text">© 2024 All Rights Reserved.<a href="#"></a></p>
+         </div>
+    </div>
+{% endblock %}
+</body>
+</html>

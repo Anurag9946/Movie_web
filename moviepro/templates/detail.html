@@ -1,0 +1,26 @@
+
+
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"><br><br><br><br>
+            <img src="{{movie.img.url}}" style="width: 280px; height:390px;"><br>
+        </div>
+        <div class="col-md-6" style="color:white;"><br><br><br><br><br><br>
+            <h1>{{movie.name}}</h1><br>
+            <h3>({{movie.year}})</h3><br>
+            <strong>{{movie.description}}</strong><br>
+            <br>
+            <a class="btn btn-secondary" href="{% url 'wishlist:add_list' movie.id %}">Watch later</a>
+<!--            <a class="btn btn-warning" href="{% url 'movieapp:update' movie.id %}">update</a>&nbsp;&nbsp;&nbsp;-->
+<!--            <a class ="btn btn-danger" href="{%url 'movieapp:delete' movie.id %}">Delete</a>-->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+

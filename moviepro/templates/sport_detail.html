@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"><br><br><br><br>
+            <img src="{{sport.img.url}}" style="width: 280px; height:390px;"><br>
+        </div>
+        <div class="col-md-6" style="color:white;"><br><br><br><br><br><br>
+            <h1>Name  - {{sport.name}}</h1><br>
+            <h3>Year  - ({{sport.year}})</h3><br>
+            <strong>{{sport.desc}}</strong><br>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}
